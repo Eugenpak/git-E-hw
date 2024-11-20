@@ -48,7 +48,7 @@ Date — дата и время создания коммита.
 
 ## Схема
 '''mermaid
-flowchart TD
+flowchart TD;
 A[] --> B{};
 B -- Yes --> C[];
 B -- No --> C[];
