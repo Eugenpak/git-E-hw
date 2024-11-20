@@ -49,14 +49,19 @@ Date — дата и время создания коммита.
 ## Типичный жизненный цикл файла в Git
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-	flowchart LR
-    id1([This is the text in the box])
-```
-
 flowchart LR
-    id1([This is the text in the box])
+    A("untracked 
+    (нетслеживаемый)")     
+    C("staged 
+    (списке на коммит)
+    + tracked")    
+    F("tracked 
+    (отслеживаемый)") 
+    O("modified
+    (измененный)")
+
+    A -->|gid add| C
+    C -- "git commit" --> F
+    F -- "Изменения" --> O
+    O -- gid add --> C
+```
